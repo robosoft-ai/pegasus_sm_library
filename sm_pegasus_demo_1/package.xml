@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>sm_pegasus_demo_1</name>
+  <version>3.1.0</version>
+  <description>PX4 multirotor warehouse inspection in Isaac Sim / Pegasus Simulator: an Iris with a forward RGB-D camera flies the shelf aisles of the Full Warehouse, pans across the shelf faces, climbs for an overview orbit and lands, the camera streamed to ROS 2 and shown in RViz, the flight gated by the depth camera (obstacle hold, cloud watchdog)</description>
+  <maintainer email="brett@robosoft.ai">Brett Aldrich</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>smacc2</depend>
+  <depend>cl_px4_mr</depend>
+  <depend>cl_generic_sensor</depend>
+  <depend>cl_ros2_timer</depend>
+  <depend>px4_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>vision_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>rclcpp</depend>
+
+  <exec_depend>depth_image_proc</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
