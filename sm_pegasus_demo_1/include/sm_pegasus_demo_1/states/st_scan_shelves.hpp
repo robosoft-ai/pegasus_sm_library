@@ -43,7 +43,11 @@ struct StScanShelves : smacc2::SmaccState<StScanShelves, SsWarehouseInspection>
 
   static void staticConfigure()
   {
-    configure_orthogonal<OrPx4, CbYawScan>(kScanAmplitudeRad, kScanPeriodS, kScanBaseHeadingRad);
+    YawScanParams scan;
+    scan.amplitude = kScanAmplitudeRad;
+    scan.period = kScanPeriodS;
+    scan.baseHeading = kScanBaseHeadingRad;
+    configure_orthogonal<OrPx4, CbYawScan>(scan);
     configure_orthogonal<OrTimer, CbTimerCountdownOnce>(rclcpp::Duration(kScanDuration));
   }
 

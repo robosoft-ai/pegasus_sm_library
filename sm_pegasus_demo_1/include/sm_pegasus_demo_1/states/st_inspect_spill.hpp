@@ -39,7 +39,11 @@ struct StInspectSpill : smacc2::SmaccState<StInspectSpill, SsWarehouseInspection
 
   static void staticConfigure()
   {
-    configure_orthogonal<OrPx4, CbYawScan>(kSpillLookAmplitudeRad, kSpillLookPeriodS, kSpillLookBaseHeadingRad);
+    YawScanParams scan;
+    scan.amplitude = kSpillLookAmplitudeRad;
+    scan.period = kSpillLookPeriodS;
+    scan.baseHeading = kSpillLookBaseHeadingRad;
+    configure_orthogonal<OrPx4, CbYawScan>(scan);
     configure_orthogonal<OrTimer, CbTimerCountdownOnce>(rclcpp::Duration(kSpillLookDuration));
   }
 
